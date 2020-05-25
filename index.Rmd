@@ -5,10 +5,16 @@ output: html_document
 
 ```{r setup, include=FALSE}
 knitr::opts_chunk$set(echo = TRUE)
+```
+```{r include=FALSE}
+library(knitr)
+library(leaflet)
+library(htmltools)
+library(plotly)
 # source("scripts/")
 # source("scripts/")
 # source("scripts/")
-# source("scripts/")
+source("scripts/Chart3.R")
 # source("scripts/")
 ```
 
@@ -31,4 +37,5 @@ The United States Department of Agriculture (USDA) collects data from agency act
 
 (chart 3 purpose)
 (chart)
+`year_global_production`
 (observations)
