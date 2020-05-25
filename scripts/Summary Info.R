@@ -1,3 +1,2 @@
 ## Summary Information on Global Coffee Insights
-
-andrea was here 
+summary_info <- coffee_df %>%
