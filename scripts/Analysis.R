@@ -12,4 +12,5 @@ coffee_df <- raw_df %>%
   group_by(Attribute_Description) %>%
   filter(Value != 0) %>%
   select(Country_Name, Market_Year, Attribute_Description, Value) %>%
-  spread(Attribute_Description, Value)
+  spread(Attribute_Description, Value) %>%
+  replace(is.na(.), 0)
