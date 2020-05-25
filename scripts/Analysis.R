@@ -5,7 +5,7 @@ library(htmltools)
 library(plotly)
 library(ggplot2)
 # Data frame
-raw_df <- read.csv("data/USDA.csv", stringsAsFactors = FALSE)
+raw_df <- read.csv("../data/USDA.csv", stringsAsFactors = FALSE)
 # Data frame
 # Value = (1000 60 KG BAGS)
 coffee_df <- raw_df %>%
