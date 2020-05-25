@@ -14,5 +14,6 @@ coffee_df <- raw_df %>%
   select(Country_Name, Market_Year, Attribute_Description, Value) %>%
   spread(Attribute_Description, Value) %>%
   replace(is.na(.), 0)
+
 #write new
 write.csv(coffee_df,"..\\data\\coffee_df.csv", row.names = FALSE)
