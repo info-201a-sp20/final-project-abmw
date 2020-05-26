@@ -60,5 +60,6 @@ The chart below visualizes the amount of coffee exported by the the top five exp
 ```{r, echo=F}
 create_exports_chart(df)
 ```
+
 From this chart, we can see that Brazil is the leading country in coffee exports in the past ten years. It is visible that Brazil exported over twice the amount that Vietnam has. We can also see that Vietnam and Columbia come in a close second. 
 
