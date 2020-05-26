@@ -1,5 +1,6 @@
 ---
-title: "Untitled"
+title: "Exploration of the USDA Data Set"
+author: "Andrea Argueta, Mariam Khan, Brynna Kilcline, and William Zhang"
 output: html_document
 ---
 
@@ -36,11 +37,13 @@ The United States Department of Agriculture (USDA) collects data from agency act
 (chart)
 (observations)
 
-(chart 2 purpose)
+## Map of Coffee Consumption
+
+This chart visualizes domestic coffee consumption for countries in 2019. Domestic consumption refers to the amount that was imported or produced and not exported. Population size is not taken into account. The visualization can help us understand the total amount of coffee consumed by each country last year.
 ```{r map, echo=F}
 create_map(df)
 ```
-(observations)
+From this, we can see that Europe, the United States, and Brazil consumed large amounts of coffee. This makes sense given the size of their populations. In contrast, the total consumption in individual African countries was minimal.
 
 (chart 3 purpose)
 (chart)
