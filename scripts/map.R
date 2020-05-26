@@ -42,6 +42,5 @@ create_map <- function(df) {
          caption = "Domestic consumption in the EU is a combined total
        rather than per individual country.",
          fill = "Consumption (in 1000 60kg bags)")
-
   return(map)
 }
