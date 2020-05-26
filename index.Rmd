@@ -19,7 +19,7 @@ library(maps)
 # source("scripts/")
 source("scripts/map.R")
 source("scripts/production.R")
-# source("scripts/")
+source("scripts/exports.R")
 
 df <- read.csv("data/coffee_df.csv", stringsAsFactors = FALSE)
 ```
@@ -46,8 +46,19 @@ create_map(df)
 
 From this, we can see that Europe, the United States, and Brazil consumed large amounts of coffee. This makes sense given the size of their populations. In contrast, the total consumption in individual African countries was minimal.
 
+## Chart
+
 This chart visualizes the global production of coffee from the year 1961 to 2019. This production value is measured in 1000 bags of coffee, with each bag weighing at 60kg.This value also accounts for all forms of produced coffee products including coffee beans, ground coffee and soluble coffee.
 ```{r, echo=F}
 product_year_f(df)
 ```
 From this, we can see that the global production of coffee has almost tripled from 1961 to 2019. The global production of coffee grew from 65,341 to 174,640 (1000 60kg bags) in 57 years. Although not shown in the chart, Brazil is the leading producer of coffee in every year.
+
+## Bar Graph of Coffee Exports
+
+The chart below visualizes the amount of coffee exported by the the top five exporting countries since 2010 (Brazil, Columbia, Vietnam, Indonesia, and Honduras). The top five were found by the filtering to the countries of the top 150 amounts of coffee exported in the last ten years.
+```{r, echo=F}
+create_exports_chart(df)
+```
+From this chart, we can see that Brazil is the leading country in coffee exports in the past ten years. It is visible that Brazil exported over twice the amount that Vietnam has. We can also see that Vietnam and Columbia come in a close second. 
+
