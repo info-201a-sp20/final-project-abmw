@@ -43,6 +43,7 @@ This chart visualizes domestic coffee consumption for countries in 2019. Domesti
 ```{r map, echo=F}
 create_map(df)
 ```
+
 From this, we can see that Europe, the United States, and Brazil consumed large amounts of coffee. This makes sense given the size of their populations. In contrast, the total consumption in individual African countries was minimal.
 
 This chart visualizes the global production of coffee from the year 1961 to 2019. This production value is measured in 1000 bags of coffee, with each bag weighing at 60kg.This value also accounts for all forms of produced coffee products including coffee beans, ground coffee and soluble coffee.
