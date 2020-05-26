@@ -11,11 +11,16 @@ library(knitr)
 library(leaflet)
 library(htmltools)
 library(plotly)
+library(dplyr)
+library(ggplot2)
+library(maps)
 # source("scripts/")
 # source("scripts/")
-# source("scripts/")
+source("scripts/map.R")
 source("scripts/Chart3.R")
 # source("scripts/")
+
+df <- read.csv("data/coffee_df.csv", stringsAsFactors = FALSE)
 ```
 
 While the world seems to be in a standstill, we thought we would choose an aspect of many people's lives that serves as a constant: coffee. Coffee is a bridge for people to connect, so looking into it further to see who/where experiences coffee in different ways is very interesting to our group. Our goal is that through this project is to understand the different manners and individuals that consume coffee and how a simple cup of coffee can shape someone's habits.
@@ -32,7 +37,9 @@ The United States Department of Agriculture (USDA) collects data from agency act
 (observations)
 
 (chart 2 purpose)
-(chart)
+```{r map, echo=F}
+create_map(df)
+```
 (observations)
 
 (chart 3 purpose)
