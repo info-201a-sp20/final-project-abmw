@@ -1,7 +1,8 @@
 summ_table <- function(df) {
   coffee_df <- df %>%
-  select(Country_Name, Bean.Exports, Bean.Imports, Domestic.Consumption) %>%
-    filter(Market_Year == 2019)
+    filter(Market_Year == 2019) %>%
+  select(Country_Name, Bean.Exports, Bean.Imports, Domestic.Consumption)
+    
   
 
 colnames(coffee_df)[colnames(coffee_df)=="Country_name"] <- "Country Name"
