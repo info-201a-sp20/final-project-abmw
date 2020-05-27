@@ -24,14 +24,15 @@ source("scripts/exports.R")
 df <- read.csv("data/coffee_df.csv", stringsAsFactors = FALSE)
 ```
 
-While the world seems to be in a standstill, we thought we would choose an aspect of many people's lives that serves as a constant: coffee. Coffee is a bridge for people to connect, so looking into it further to see who/where experiences coffee in different ways is very interesting to our group. Our goal is that through this project is to understand the different manners and individuals that consume coffee and how a simple cup of coffee can shape someone's habits.
+While the world seems to be in a standstill, we thought we would choose an aspect of many people's lives that serves as a constant: coffee. Coffee is a bridge for people to connect, so looking into it further to see who/where experiences coffee in different ways is very interesting to our group. Our goal is that through this project we want to understand how the global consumption differs across countries and over time. 
 
 The United States Department of Agriculture (USDA) collects data from agency activities which are then summarized into reports. The file we are going to explore consists of data about coffee bean production, export, import and consumption for every country by year. With this data, we can answer our questions about how coffee production and coffee culture is distributed around the world.
 
-##Summary Information
+## Summary Information
 ```{r, echo=FALSE}
-kable(get_sum_info(df))
+list <- summ_info(df)
 ```
+In 2019, `r list[[3]]` countries and republics exported/imported coffee. During the year, `r list[[2]]` thousand bags (each weighing 60kg) of beans were imported globally. Likewise, `r list[[1]]` thousand bags were exported worldwide. Also, `r list[[4]]` thousand bags of Arabica coffee were produced amongst the countries in the summary table. Domestic consumption totalled to `r list[[5]]` thousand bags in the year 2019.
 
 ## Summary Table
 ```{r, echo=FALSE}
@@ -47,7 +48,7 @@ create_map(df)
 
 From this, we can see that Europe, the United States, and Brazil consumed large amounts of coffee. This makes sense given the size of their populations. In contrast, the total consumption in individual African countries was minimal.
 
-## Chart
+## Trend Line of Coffee Production 
 
 This chart visualizes the global production of coffee from the year 1961 to 2019. This production value is measured in 1000 bags of coffee, with each bag weighing at 60kg.This value also accounts for all forms of produced coffee products including coffee beans, ground coffee and soluble coffee.
 ```{r, echo=F}
