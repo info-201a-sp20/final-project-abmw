@@ -1,13 +1,8 @@
 ## Summary Information on Global Coffee Insights
-get_col_info <- function(column_name, data_frame) %>%
-  (select(data_frame, column_name))
+get_sum_info <- function(df) {
+  (select(coffee_df, "Country_Name", "`Bean Exports`", "`Bean Imports`", "`Domestic Consumption`"))
+  return(list(summarize(coffee_df)
+              }
+  
 
-    return(list(summarize(
-      data_frame,
-     )
-
-  }
-}
-summ_info <- function(coffee_df){
-  sapply(colnames(coffee_df), get_col_info, coffee_df)
-}
+    
