@@ -19,6 +19,7 @@ library(maps)
 # source("scripts/")
 source("scripts/map.R")
 source("scripts/production.R")
+source("scripts/summ_table.R")
 # source("scripts/")
 
 df <- read.csv("data/coffee_df.csv", stringsAsFactors = FALSE)
@@ -29,9 +30,10 @@ While the world seems to be in a standstill, we thought we would choose an aspec
 The United States Department of Agriculture (USDA) collects data from agency activities which are then summarized into reports. The file we are going to explore consists of data about coffee bean production, export, import and consumption for every country by year. With this data, we can answer our questions about how coffee production and coffee culture is distributed around the world.
 
 (summary paragraph)
-
-(table)
-(observations)
+## Summary Table
+```{r, echo=FALSE}
+kable(summ_table(df))
+```
 
 (chart 1 purpose)
 (chart)
