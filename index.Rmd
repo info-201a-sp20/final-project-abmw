@@ -58,6 +58,7 @@ From this, we can see that the global production of coffee has almost tripled fr
 ## Bar Graph of Coffee Exports
 
 The chart below visualizes the amount of coffee exported by the the top five exporting countries since 2010 (Brazil, Columbia, Vietnam, Indonesia, and Honduras). The top five were found by the filtering to the countries of the top 150 amounts of coffee exported in the last ten years.
+
 ```{r, echo=F}
 create_exports_chart(df)
 ```
