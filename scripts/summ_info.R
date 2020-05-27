@@ -1,10 +1,13 @@
 ## Summary Information on Global Coffee Insights
-get_sum_info <- function(df) {
-  coffee_df <- df
-  (select(df, 
-          "Country_Name", "Bean.Exports", "Bean.Imports", "Domestic.Consumption","Total.Distribution"))
-  return(list(summarize(coffee_df)))
-}
-  
+## total number of countries that produced coffee
+country_prod <- (coffee_df) %>%
+  filter(Market_Year == 2019) %>%
+  nrow()
+##total number of Arabica coffee produced in 2019
+bean_imports <- coffee_df %>%
+  (coffee_df) %>%
+  filter(Market_Year == 2019) %>%
+  sum("Bean Imports")
+
 
     
