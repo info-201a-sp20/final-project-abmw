@@ -29,7 +29,7 @@ While the world seems to be in a standstill, we thought we would choose an aspec
 The United States Department of Agriculture (USDA) collects data from agency activities which are then summarized into reports. The file we are going to explore consists of data about coffee bean production, export, import and consumption for every country by year. With this data, we can answer our questions about how coffee production and coffee culture is distributed around the world.
 
 ## Summary Information
-In 2019,`country_prod` countries and republics exported/imported coffee.During the year, 50000  bags (each weighing 60kg) of Arabia coffee was produced. 
+In 2019,`country_prod` countries and republics exported/imported coffee. During the year, `bean_import` bags (each weighing 60kg) of beans were imported globally.
 
 ## Summary Table
 ```{r, echo=FALSE}
