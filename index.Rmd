@@ -15,16 +15,10 @@ library(plotly)
 library(dplyr)
 library(ggplot2)
 library(maps)
-# source("scripts/")
-# source("scripts/")
 source("scripts/map.R")
 source("scripts/production.R")
-<<<<<<< HEAD
-source("scripts/summ_table.R")
-# source("scripts/")
-=======
+source("scripts/summ_table .R")
 source("scripts/exports.R")
->>>>>>> 3b17fac01d0b318c726eeb50964722e66826a993
 
 df <- read.csv("data/coffee_df.csv", stringsAsFactors = FALSE)
 ```
@@ -38,10 +32,6 @@ The United States Department of Agriculture (USDA) collects data from agency act
 ```{r, echo=FALSE}
 kable(summ_table(df))
 ```
-
-(chart 1 purpose)
-(chart)
-(observations)
 
 ## Map of Coffee Consumption
 
