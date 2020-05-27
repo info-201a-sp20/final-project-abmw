@@ -18,6 +18,7 @@ library(maps)
 source("scripts/map.R")
 source("scripts/production.R")
 source("scripts/summ_table .R")
+source("scripts/summ_info.R")
 source("scripts/exports.R")
 
 df <- read.csv("data/coffee_df.csv", stringsAsFactors = FALSE)
@@ -26,6 +27,11 @@ df <- read.csv("data/coffee_df.csv", stringsAsFactors = FALSE)
 While the world seems to be in a standstill, we thought we would choose an aspect of many people's lives that serves as a constant: coffee. Coffee is a bridge for people to connect, so looking into it further to see who/where experiences coffee in different ways is very interesting to our group. Our goal is that through this project is to understand the different manners and individuals that consume coffee and how a simple cup of coffee can shape someone's habits.
 
 The United States Department of Agriculture (USDA) collects data from agency activities which are then summarized into reports. The file we are going to explore consists of data about coffee bean production, export, import and consumption for every country by year. With this data, we can answer our questions about how coffee production and coffee culture is distributed around the world.
+
+##Summary Information
+```{r, echo=FALSE}
+kable(get_sum_info(df))
+```
 
 ## Summary Table
 ```{r, echo=FALSE}
