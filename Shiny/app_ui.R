@@ -18,6 +18,9 @@ ui <- fluidPage(
  this project we want to understand how the global consumption 
  differs across countries and over time.")
  
+ p("For this final project, we decided to use the USDA and World Bank
+   databases which provides insights concering the household and worldwide 
+   consumption of coffee")
  tabsetPanel(
    tabPanel("Map",
             sidebarLayout(
