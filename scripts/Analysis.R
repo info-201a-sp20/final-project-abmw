@@ -67,7 +67,7 @@ joined <- left_join(consumption_df, pop_df,
                     by = c("Country_Name" = "ï..Country.Name",
                            "Market_Year" = "Year")) %>%
   filter(Market_Year < 2019) %>%
-  mutate(Consumption.per.Capita = Domestic.Consumption / Population)
+  mutate(Consumption.per.Capita = (Domestic.Consumption / Population) * 1000)
 
 # write
 write.csv(joined, file = "../data/dom_consumption_df.csv", row.names = F)
