@@ -2,7 +2,6 @@
 library("shiny")
 library("ggplot2")
 library("dplyr")
-library("DT")
 library("plotly")
 library("rsconnect")
 library("lintr")
@@ -18,4 +17,44 @@ ui <- fluidPage(
  very interesting to our group. Our goal is that through 
  this project we want to understand how the global consumption 
  differs across countries and over time.")
+ 
+ tabsetPanel(
+   tabPanel("Map",
+            sidebarLayout(
+              sidebarPanel(selectInput
+                           (inputId = "state", label = "Coffee Map",
+                             choices = state_list),
+              ),
+              mainPanel(
+                plotlyOutput(outputId = "chart")
+              )
+            )
+   ),
+   
+   tabsetPanel(
+     tabPanel("Line Graph",
+              sidebarLayout(
+                sidebarPanel(selectInput
+                             (inputId = "state", label = "Coffee Line",
+                               choices = state_list),
+                ),
+                mainPanel(
+                  plotlyOutput(outputId = "chart")
+                )
+              )
+     ),
+     
+     tabsetPanel(
+       tabPanel("Bar Graph",
+                sidebarLayout(
+                  sidebarPanel(selectInput
+                               (inputId = "state", label = "Coffee Bar Chart",
+                                 choices = state_list),
+                  ),
+                  mainPanel(
+                    plotlyOutput(outputId = "chart")
+                  )
+                )
+       ),
+     )
 )
