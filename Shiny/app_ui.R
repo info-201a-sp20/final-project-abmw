@@ -9,8 +9,13 @@ library("lintr")
 # Define UI for the Introduction page 
 ui <- fluidPage(
   titlePanel("Constants in a COVID driven life"),
-  img("The Stages of Coffee", src = "../Shiny/coffee.jpg"),
- h2("Overview"),
+  p(strong("Authors: Andrea Argueta, Mariam Khan, Brynna Kilcline, and William Zhang")),
+  
+  p(strong("Informatics 201-Section BA")),
+  
+  img("The Stages of Coffee", src = "../desktop/final-project-abmw/Shiny/coffee.jpg"),
+ 
+  h2("Overview"),
  
  p("While the world seems to be in a standstill,
  we thought we would choose an aspect of many people’s 
@@ -32,7 +37,50 @@ ui <- fluidPage(
    household consumption of coffee. This data was collected from the World Bank; they 
    collected the data using sample surveys to understand the area segments in which 
    coffee consumption per household was highest. They also created ranges which demonstrate 
-   the household coffee consumption by rural, urban, and national areas"),
+   the household coffee consumption by rural, urban, and national areas."),
  h2("Major Questions"),
- p("What time do people drink coffee?")
+ p("What does household consumption look like by country?"),
+ p("How is the total porduction of coffee distributed around the world?"),
+ p("What cultures and countries consume coffee and how it may affect them economically?"),
+ tabsetPanel(
+    tabPanel("Map",
+             sidebarLayout(
+                sidebarPanel(selectInput
+                             (inputId = "state", label = "Coffee Map",
+                                choices = state_list),
+                ),
+                mainPanel(
+                   plotlyOutput(outputId = "chart")
+                )
+             )
+    ),
+    
+    tabsetPanel(
+       tabPanel("Line Graph",
+                sidebarLayout(
+                   sidebarPanel(selectInput
+                                (inputId = "state", label = "Coffee Line",
+                                   choices = state_list),
+                   ),
+                   mainPanel(
+                      plotlyOutput(outputId = "chart")
+                   )
+                )
+       ),
+       
+       tabsetPanel(
+          tabPanel("Bar Graph",
+                   sidebarLayout(
+                      sidebarPanel(selectInput
+                                   (inputId = "state", label = "Coffee Bar Chart",
+                                      choices = state_list),
+                      ),
+                      mainPanel(
+                         plotlyOutput(outputId = "chart")
+                      )
+                   )
+          ),
+       )
+    )
+    
 )
