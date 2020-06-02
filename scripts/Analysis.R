@@ -23,20 +23,26 @@ write.csv(coffee_df, "..\\data\\coffee_df.csv", row.names = FALSE)
 # make country names match world map data frame
 fix_names <- function(col) {
   col <- col %>%
-    str_replace("Congo (Brazzaville)", "Republic of Congo") %>%
-    str_replace("Congo (Kinshasa)", "Democratic Republic of the Congo") %>%
-    str_replace("Cote d'Ivoire", "Ivory Coast") %>%
-    str_replace("Korea, South", "South Korea") %>%
-    str_replace("United States", "USA") %>%
-    str_replace("Congo, Rep.", "Republic of Congo") %>%
-    str_replace("Congo, Dem. Rep.", "Democratic Republic of the Congo") %>%
+    str_replace("Congo (Brazzaville)", "Congo") %>%
+    str_replace("Congo (Kinshasa)", "Congo, Democratic Republic of the") %>%
+    str_replace("United States", "United States of America") %>%
+    str_replace("Congo, Rep.", "Congo") %>%
+    str_replace("Congo, Dem. Rep.", "Congo, Democratic Republic of the") %>%
     str_replace("Egypt, Arab Rep.", "Egypt") %>%
-    str_replace("Iran, Islamic Rep.", "Iran") %>%
-    str_replace("Korea, Rep.", "South Korea") %>%
-    str_replace("Lao PDR", "Laos") %>%
-    str_replace("Russian Federation", "Russia") %>%
+    str_replace("Iran, Islamic Rep.", "Iran (Islamic Republic of)") %>%
+    str_replace("Iran", "Iran (Islamic Republic of)") %>%
+    str_replace("Korea, Rep.", "Korea, Republic of") %>%
+    str_replace("South Korea", "Korea, Republic of") %>%
+    str_replace("Lao PDR", "Lao People's Democratic Republic") %>%
+    str_replace("Laos", "Lao People's Democratic Republic") %>%
+    str_replace("Russia", "Russian Federation") %>%
     str_replace("Venezuela, RB", "Venezuela") %>%
-    str_replace("Yemen, Rep.", "Yemen")
+    str_replace("Yemen, Rep.", "Yemen") %>%
+    str_replace("Côte d'Ivoire", "Cote d'Ivoire") %>%
+    str_replace("Taiwan", "Taiwan, Province of China") %>%
+    str_replace("Tanzania", "Tanzania, United Republic of") %>%
+    str_replace("Venezuela", "Venezuela (Bolivarian Republic of)") %>%
+    str_replace("Vietnam", "Viet Nam")
   return(col)
 }
 
@@ -68,6 +74,14 @@ joined <- left_join(consumption_df, pop_df,
                            "Market_Year" = "Year")) %>%
   filter(Market_Year < 2019) %>%
   mutate(Consumption.per.Capita = (Domestic.Consumption / Population) * 1000)
+
+# add country codes
+codes <- read.csv("../data/country_codes.csv", stringsAsFactors = F) %>%
+  select(name, alpha.3)
+
+codes$name <- sapply(codes$name, fix_names)
+
+joined <- left_join(joined, codes, by = c("Country_Name" = "name"))
 
 # write
 write.csv(joined, file = "../data/dom_consumption_df.csv", row.names = F)
