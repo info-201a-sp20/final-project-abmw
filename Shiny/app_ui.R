@@ -42,18 +42,7 @@ ui <- fluidPage(
  p("What does household consumption look like by country?"),
  p("How is the total porduction of coffee distributed around the world?"),
  p("What cultures and countries consume coffee and how it may affect them economically?"),
- tabsetPanel(
-    tabPanel("Map",
-             sidebarLayout(
-                sidebarPanel(selectInput
-                             (inputId = "state", label = "Coffee Map",
-                                choices = state_list),
-                ),
-                mainPanel(
-                   plotlyOutput(outputId = "chart")
-                )
-             )
-    ),
+ map_page,
     
     tabsetPanel(
        tabPanel("Line Graph",
@@ -83,4 +72,17 @@ ui <- fluidPage(
        )
     )
     
+)
+
+
+map_page <- tabsetPanel(
+  tabPanel("Map",
+    sidebarLayout(
+      sidebarPanel(selectInput(inputId = "year", label = "Coffee Map",
+                    choices = 1960:2018)),
+      mainPanel(
+        plotlyOutput(outputId = "map")
+      )
+    )
+  )
 )
