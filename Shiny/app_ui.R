@@ -6,6 +6,18 @@ library("plotly")
 library("rsconnect")
 library("lintr")
 
+map_page <- tabsetPanel(
+  tabPanel("Map",
+           sidebarLayout(
+             sidebarPanel(selectInput(inputId = "year", label = "Year",
+                                      choices = as.list(1961:2018), selected = 2018)),
+             mainPanel(
+               plotlyOutput(outputId = "map")
+             )
+           )
+  )
+)
+
 # Define UI for the Introduction page 
 ui <- fluidPage(
   titlePanel("Constants in a COVID driven life"),
@@ -71,16 +83,4 @@ ui <- fluidPage(
    )
  )
  
-)
-
-map_page <- tabsetPanel(
-  tabPanel("Map",
-    sidebarLayout(
-      sidebarPanel(selectInput(inputId = "year", label = "Year",
-                    choices = as.list(1961:2018), selected = 2018)),
-      mainPanel(
-        plotlyOutput(outputId = "map")
-      )
-    )
-  )
 )
