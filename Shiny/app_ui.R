@@ -5,6 +5,8 @@ library("dplyr")
 library("plotly")
 library("rsconnect")
 library("lintr")
+library("htmltools")
+
 
 map_page <- tabsetPanel(
   tabPanel("Domestic Consumption",
@@ -30,7 +32,7 @@ map_page <- tabsetPanel(
 # Define UI for the Introduction page 
 ui <- fluidPage(
   includeCSS("style.css"),
-  titlePanel("Constants in a COVID- Driven Lifestyle"),
+  titlePanel("A Constant in a COVID-Driven Lifestyle"),
   p(strong("Authors: Andrea Argueta, Mariam Khan, Brynna Kilcline, and William Zhang")),
   
   p(strong("Informatics 201-Section BA")),
@@ -61,6 +63,7 @@ ui <- fluidPage(
    coffee consumption per household was highest. They also created ranges which demonstrate 
    the household coffee consumption by rural, urban, and national areas."),
  h2("Major Questions"),
+
  p("What does household consumption look like by country?"),
  p("How is the total production of coffee distributed around the world?"),
  p("What cultures and countries consume coffee and how it may affect them economically?"),
