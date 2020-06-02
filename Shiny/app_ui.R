@@ -13,7 +13,7 @@ ui <- fluidPage(
   
   p(strong("Informatics 201-Section BA")),
   
-  img("The Stages of Coffee", src = "../desktop/final-project-abmw/Shiny/coffee.jpg"),
+  img("The Stages of Coffee", src = "coffee.jpg"),
  
   h2("Overview"),
  
@@ -43,37 +43,35 @@ ui <- fluidPage(
  p("How is the total porduction of coffee distributed around the world?"),
  p("What cultures and countries consume coffee and how it may affect them economically?"),
  map_page,
-    
-    tabsetPanel(
-       tabPanel("Line Graph",
-                sidebarLayout(
-                   sidebarPanel(selectInput
-                                (inputId = "state", label = "Coffee Line",
-                                   choices = state_list),
-                   ),
-                   mainPanel(
-                      plotlyOutput(outputId = "chart")
-                   )
+ tabsetPanel(
+   tabPanel("Line Graph",
+            sidebarLayout(
+              sidebarPanel(selectInput
+                           (inputId = "state", label = "Coffee Line",
+                             choices = state_list),
+              ),
+              mainPanel(
+                plotlyOutput(outputId = "chart")
+              )
+            )
+   ),
+   
+   tabsetPanel(
+     tabPanel("Bar Graph",
+              sidebarLayout(
+                sidebarPanel(selectInput
+                             (inputId = "state", label = "Coffee Bar Chart",
+                               choices = state_list),
+                ),
+                mainPanel(
+                  plotlyOutput(outputId = "chart")
                 )
-       ),
-       
-       tabsetPanel(
-          tabPanel("Bar Graph",
-                   sidebarLayout(
-                      sidebarPanel(selectInput
-                                   (inputId = "state", label = "Coffee Bar Chart",
-                                      choices = state_list),
-                      ),
-                      mainPanel(
-                         plotlyOutput(outputId = "chart")
-                      )
-                   )
-          ),
-       )
-    )
-    
+              )
+     ),
+   )
+ )
+ 
 )
-
 
 map_page <- tabsetPanel(
   tabPanel("Map",
@@ -85,4 +83,5 @@ map_page <- tabsetPanel(
       )
     )
   )
+)
 )
