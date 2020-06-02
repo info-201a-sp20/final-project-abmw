@@ -7,7 +7,6 @@ library("rsconnect")
 library("lintr")
 library("htmltools")
 
-
 map_page <- tabsetPanel(
   tabPanel("Domestic Consumption",
     sidebarLayout(
@@ -37,7 +36,8 @@ ui <- fluidPage(
   
   p(strong("Informatics 201-Section BA")),
   
-  img("The Stages of Coffee", src = "coffee.jpg"),
+ img("The Stages of Coffee", src = "coffee.jpg"),
+  
  
   h2("Overview"),
  
@@ -63,7 +63,6 @@ ui <- fluidPage(
    coffee consumption per household was highest. They also created ranges which demonstrate 
    the household coffee consumption by rural, urban, and national areas."),
  h2("Major Questions"),
-
  p("What does household consumption look like by country?"),
  p("How is the total production of coffee distributed around the world?"),
  p("What cultures and countries consume coffee and how it may affect them economically?"),
