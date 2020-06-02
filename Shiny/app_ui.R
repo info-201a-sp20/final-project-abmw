@@ -7,11 +7,20 @@ library("rsconnect")
 library("lintr")
 
 map_page <- tabsetPanel(
-  tabPanel("Map",
+  tabPanel("Domestic Consumption",
     sidebarLayout(
-      sidebarPanel(selectInput(inputId = "year", label = "Year",
+      sidebarPanel(
+        br(), br(), br(), br(), br(), br(), br(), br(), br(), br(), br(), br(),
+        selectInput(inputId = "year", label = "Year",
                                choices = as.list(1961:2018), selected = 2018)),
       mainPanel(
+        p("Domestic coffee consumption per capita is defined as the amount of
+          coffee a country produced and imported minus the amount it exported,
+          divided by the country's population. In other words, it's the average
+          amount of coffee that stayed in the country per person. This helps us
+          compare coffee consumption across countries regardless of their
+          relative sizes."),
+        br(),
         plotlyOutput(outputId = "map")
       )
     )
@@ -20,6 +29,7 @@ map_page <- tabsetPanel(
 
 # Define UI for the Introduction page 
 ui <- fluidPage(
+  includeCSS("style.css"),
   titlePanel("Constants in a COVID driven life"),
   p(strong("Authors: Andrea Argueta, Mariam Khan, Brynna Kilcline, and William Zhang")),
   
@@ -30,7 +40,7 @@ ui <- fluidPage(
   h2("Overview"),
  
  p("While the world seems to be in a standstill,
- we thought we would choose an aspect of many people’s 
+ we thought we would choose an aspect of many people's 
  lives that serves as a constant: coffee. Coffee is a 
  bridge for people to connect, so looking into it further 
  to see who/where experiences coffee in different ways is 
