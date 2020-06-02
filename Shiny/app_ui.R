@@ -30,7 +30,7 @@ map_page <- tabsetPanel(
 # Define UI for the Introduction page 
 ui <- fluidPage(
   includeCSS("style.css"),
-  titlePanel("Constants in a COVID driven life"),
+  titlePanel("Constants in a COVID- Driven Lifestyle"),
   p(strong("Authors: Andrea Argueta, Mariam Khan, Brynna Kilcline, and William Zhang")),
   
   p(strong("Informatics 201-Section BA")),
