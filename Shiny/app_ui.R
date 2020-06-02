@@ -76,12 +76,15 @@ ui <- fluidPage(
 map_page <- tabsetPanel(
   tabPanel("Map",
     sidebarLayout(
-      sidebarPanel(selectInput(inputId = "year", label = "Coffee Map",
-                    choices = 1960:2018)),
+      sidebarPanel(selectInput(inputId = "year", label = "Year",
+                    choices = as.list(1961:2018))),
       mainPanel(
         plotlyOutput(outputId = "map")
       )
     )
   )
 )
+<<<<<<< HEAD
 )
+=======
+>>>>>>> 993608a3f45849c8e729ea5911e12378db926b61
