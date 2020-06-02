@@ -7,7 +7,7 @@ library("stringr")
 server <- function(input, output) {
   dom_consumption_df <- read.csv(
     "../data/dom_consumption_df.csv", stringsAsFactors = F)
-  output$map <- renderPlot({
+  output$map <- renderPlotly({
     dom_consumption_df <- dom_consumption_df %>%
       filter(Market_Year == input$year)
     

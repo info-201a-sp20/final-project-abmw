@@ -8,13 +8,13 @@ library("lintr")
 
 map_page <- tabsetPanel(
   tabPanel("Map",
-           sidebarLayout(
-             sidebarPanel(selectInput(inputId = "year", label = "Year",
-                                      choices = as.list(1961:2018), selected = 2018)),
-             mainPanel(
-               plotlyOutput(outputId = "map")
-             )
-           )
+    sidebarLayout(
+      sidebarPanel(selectInput(inputId = "year", label = "Year",
+                               choices = as.list(1961:2018), selected = 2018)),
+      mainPanel(
+        plotlyOutput(outputId = "map")
+      )
+    )
   )
 )
 
