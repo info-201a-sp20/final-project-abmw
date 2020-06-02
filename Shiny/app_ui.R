@@ -7,7 +7,12 @@ library("rsconnect")
 library("lintr")
 library("htmltools")
 
+<<<<<<< HEAD
 map_page <- tabsetPanel(
+=======
+
+map_page <-
+>>>>>>> 90f7c212b1474eda7d51b24b913081c259fd3e66
   tabPanel("Domestic Consumption",
     sidebarLayout(
       sidebarPanel(
@@ -26,22 +31,25 @@ map_page <- tabsetPanel(
       )
     )
   )
-)
 
-# Define UI for the Introduction page 
-ui <- fluidPage(
-  includeCSS("style.css"),
-  titlePanel("A Constant in a COVID-Driven Lifestyle"),
+intro_page <- tabPanel(
+  title = "Introduction",
+
   p(strong("Authors: Andrea Argueta, Mariam Khan, Brynna Kilcline, and William Zhang")),
   
   p(strong("Informatics 201-Section BA")),
   
+<<<<<<< HEAD
  img("The Stages of Coffee", src = "coffee.jpg"),
   
  
+=======
+  img("The Stages of Coffee", src = "coffee.jpg"),
+  
+>>>>>>> 90f7c212b1474eda7d51b24b913081c259fd3e66
   h2("Overview"),
- 
- p("While the world seems to be in a standstill,
+  
+  p("While the world seems to be in a standstill,
  we thought we would choose an aspect of many people's 
  lives that serves as a constant: coffee. Coffee is a 
  bridge for people to connect, so looking into it further 
@@ -49,8 +57,8 @@ ui <- fluidPage(
  very interesting to our group. Our goal is that through 
  this project we want to understand how the global consumption 
  differs across countries and over time."),
- 
- p("For this final project, we decided to use the USDA and World Bank
+  
+  p("For this final project, we decided to use the USDA and World Bank
    databases which provides insights concering the household and worldwide 
    consumption of coffee.The United States Department of Agriculture (USDA) 
    collects data from agency activities which are then summarized into reports. 
@@ -62,10 +70,39 @@ ui <- fluidPage(
    collected the data using sample surveys to understand the area segments in which 
    coffee consumption per household was highest. They also created ranges which demonstrate 
    the household coffee consumption by rural, urban, and national areas."),
+<<<<<<< HEAD
  h2("Major Questions"),
  p("What does household consumption look like by country?"),
  p("How is the total production of coffee distributed around the world?"),
  p("What cultures and countries consume coffee and how it may affect them economically?"),
+=======
+
+  h2("Major Questions"),
+  p("What does household consumption look like by country?"),
+  p("How is the total production of coffee distributed around the world?"),
+  p("What cultures and countries consume coffee and how it may affect them economically?")
+  
+)
+conclusion_page <- tabPanel(
+  "Conclusion",
+  p("High levels of domestic coffee consumption from 1961 to 2002 are mostly
+    limited to countries known for producing coffee, like Brazil, Colombia,
+    Venezuela, and Ethiopia. In 2003, there is a general spread of coffee
+    consumption, especially in the 'Western' countries. (Few European countries are
+    represented in the visualization, but the ones that are show an increase,
+    along with the United States, Canada, and Australia.) It's unclear whether the
+    sudden change is genuine or due to an increase in availability of data, but the
+    overall pattern remains clear. In the most recent years, some of these
+    countries even surpass the coffee producers in domestic consumption.")
+  #takeaway2
+  #takeaway3
+)
+# Define UI for the Introduction page 
+ui <- navbarPage(
+  "Constants in a COVID- Driven Lifestyle",
+  intro_page,
+
+>>>>>>> 90f7c212b1474eda7d51b24b913081c259fd3e66
  map_page,
 #  tabsetPanel(
 #    tabPanel("Line Graph",
@@ -95,16 +132,5 @@ ui <- fluidPage(
 #    )
 #  )
 #  
-  h2("Conclusion"),
-  p("High levels of domestic coffee consumption from 1961 to 2002 are mostly
-    limited to countries known for producing coffee, like Brazil, Colombia,
-    Venezuela, and Ethiopia. In 2003, there is a general spread of coffee
-    consumption, especially in the 'Western' countries. (Few European countries are
-    represented in the visualization, but the ones that are show an increase,
-    along with the United States, Canada, and Australia.) It's unclear whether the
-    sudden change is genuine or due to an increase in availability of data, but the
-    overall pattern remains clear. In the most recent years, some of these
-    countries even surpass the coffee producers in domestic consumption.")
-  #takeaway2
-  #takeaway3
+  conclusion_page
 )
