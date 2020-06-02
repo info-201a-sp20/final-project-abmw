@@ -62,9 +62,9 @@ ui <- fluidPage(
    the household coffee consumption by rural, urban, and national areas."),
  h2("Major Questions"),
  p("What does household consumption look like by country?"),
- p("How is the total porduction of coffee distributed around the world?"),
+ p("How is the total production of coffee distributed around the world?"),
  p("What cultures and countries consume coffee and how it may affect them economically?"),
- map_page#,
+ map_page,
 #  tabsetPanel(
 #    tabPanel("Line Graph",
 #             sidebarLayout(
@@ -93,4 +93,16 @@ ui <- fluidPage(
 #    )
 #  )
 #  
+  h2("Conclusion"),
+  p("High levels of domestic coffee consumption from 1961 to 2002 are mostly
+    limited to countries known for producing coffee, like Brazil, Colombia,
+    Venezuela, and Ethiopia. In 2003, there is a general spread of coffee
+    consumption, especially in the 'Western' countries. (Few European countries are
+    represented in the visualization, but the ones that are show an increase,
+    along with the United States, Canada, and Australia.) It's unclear whether the
+    sudden change is genuine or due to an increase in availability of data, but the
+    overall pattern remains clear. In the most recent years, some of these
+    countries even surpass the coffee producers in domestic consumption.")
+  #takeaway2
+  #takeaway3
 )
