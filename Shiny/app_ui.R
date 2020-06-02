@@ -55,32 +55,32 @@ ui <- fluidPage(
  p("How is the total porduction of coffee distributed around the world?"),
  p("What cultures and countries consume coffee and how it may affect them economically?"),
  map_page,
- tabsetPanel(
-   tabPanel("Line Graph",
-            sidebarLayout(
-              sidebarPanel(selectInput
-                           (inputId = "state", label = "Coffee Line",
-                             choices = state_list),
-              ),
-              mainPanel(
-                plotlyOutput(outputId = "chart")
-              )
-            )
-   ),
-   
-   tabsetPanel(
-     tabPanel("Bar Graph",
-              sidebarLayout(
-                sidebarPanel(selectInput
-                             (inputId = "state", label = "Coffee Bar Chart",
-                               choices = state_list),
-                ),
-                mainPanel(
-                  plotlyOutput(outputId = "chart")
-                )
-              )
-     ),
-   )
- )
- 
-)
+#  tabsetPanel(
+#    tabPanel("Line Graph",
+#             sidebarLayout(
+#               sidebarPanel(selectInput
+#                            (inputId = "state", label = "Coffee Line",
+#                              choices = state_list),
+#               ),
+#               mainPanel(
+#                 plotlyOutput(outputId = "chart")
+#               )
+#             )
+#    ),
+#    
+#    tabsetPanel(
+#      tabPanel("Bar Graph",
+#               sidebarLayout(
+#                 sidebarPanel(selectInput
+#                              (inputId = "state", label = "Coffee Bar Chart",
+#                                choices = state_list),
+#                 ),
+#                 mainPanel(
+#                   plotlyOutput(outputId = "chart")
+#                 )
+#               )
+#      ),
+#    )
+#  )
+#  
+#)
