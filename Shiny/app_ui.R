@@ -54,7 +54,7 @@ ui <- fluidPage(
  p("What does household consumption look like by country?"),
  p("How is the total porduction of coffee distributed around the world?"),
  p("What cultures and countries consume coffee and how it may affect them economically?"),
- map_page,
+ map_page#,
 #  tabsetPanel(
 #    tabPanel("Line Graph",
 #             sidebarLayout(
@@ -83,4 +83,4 @@ ui <- fluidPage(
 #    )
 #  )
 #  
-#)
+)
