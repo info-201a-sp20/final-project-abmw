@@ -5,6 +5,8 @@ library("dplyr")
 library("plotly")
 library("rsconnect")
 library("lintr")
+library("htmltools")
+
 
 map_page <-
   tabPanel("Domestic Consumption",
@@ -28,6 +30,7 @@ map_page <-
 
 intro_page <- tabPanel(
   title = "Introduction",
+
   p(strong("Authors: Andrea Argueta, Mariam Khan, Brynna Kilcline, and William Zhang")),
   
   p(strong("Informatics 201-Section BA")),
@@ -57,6 +60,7 @@ intro_page <- tabPanel(
    collected the data using sample surveys to understand the area segments in which 
    coffee consumption per household was highest. They also created ranges which demonstrate 
    the household coffee consumption by rural, urban, and national areas."),
+
   h2("Major Questions"),
   p("What does household consumption look like by country?"),
   p("How is the total production of coffee distributed around the world?"),
@@ -81,6 +85,7 @@ conclusion_page <- tabPanel(
 ui <- navbarPage(
   "Constants in a COVID- Driven Lifestyle",
   intro_page,
+
  map_page,
 #  tabsetPanel(
 #    tabPanel("Line Graph",
