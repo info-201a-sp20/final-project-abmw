@@ -7,8 +7,12 @@ library("rsconnect")
 library("lintr")
 library("htmltools")
 
+<<<<<<< HEAD
+map_page <- tabsetPanel(
+=======
 
 map_page <-
+>>>>>>> 90f7c212b1474eda7d51b24b913081c259fd3e66
   tabPanel("Domestic Consumption",
     includeCSS("style.css"),
     sidebarLayout(
@@ -36,8 +40,14 @@ intro_page <- tabPanel(
   
   p(strong("Informatics 201-Section BA")),
   
+<<<<<<< HEAD
+ img("The Stages of Coffee", src = "coffee.jpg"),
+  
+ 
+=======
   img("The Stages of Coffee", src = "coffee.jpg"),
   
+>>>>>>> 90f7c212b1474eda7d51b24b913081c259fd3e66
   h2("Overview"),
   
   p("While the world seems to be in a standstill,
@@ -61,6 +71,12 @@ intro_page <- tabPanel(
    collected the data using sample surveys to understand the area segments in which 
    coffee consumption per household was highest. They also created ranges which demonstrate 
    the household coffee consumption by rural, urban, and national areas."),
+<<<<<<< HEAD
+ h2("Major Questions"),
+ p("What does household consumption look like by country?"),
+ p("How is the total production of coffee distributed around the world?"),
+ p("What cultures and countries consume coffee and how it may affect them economically?"),
+=======
 
   h2("Major Questions"),
   p("What does household consumption look like by country?"),
@@ -87,6 +103,7 @@ ui <- navbarPage(
   "Constants in a COVID- Driven Lifestyle",
   intro_page,
 
+>>>>>>> 90f7c212b1474eda7d51b24b913081c259fd3e66
  map_page,
 #  tabsetPanel(
 #    tabPanel("Line Graph",
