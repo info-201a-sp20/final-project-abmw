@@ -36,9 +36,13 @@ server <- function(input, output) {
                position = "dodge")
     
     barchart <- ggplotly(barchart) %>%
-      layout(title = "Comparison of Rural and Urban Household Coffee Consumption by Country",
+      layout(title = "Comparison of Rural and Urban Household Coffee
+             Consumption by Country",
              yaxis = list(title = "US$ (Million)")) %>%
-      colorbar(title = "Area Type")
+      colorbar(title = "Area Type") %>%
+      layout(
+        margin = list(t = 50)
+      )
     return(barchart)
   })
   
