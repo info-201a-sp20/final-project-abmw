@@ -136,7 +136,7 @@ intro_page <- tabPanel(
   title = "Introduction",
   p(strong("Authors: Andrea Argueta, Mariam Khan, Brynna Kilcline, and William Zhang")),
   p(strong("Informatics 201-Section BA")),
-  img("The Stages of Coffee", src = "coffee.jpg"),
+  img("The Stages of Coffee", src = "https://unsplash.com/photos/Y3AqmbmtLQI"),
   h2("Overview"),
   p("While the world seems to be in a standstill,
    we thought we would choose an aspect of many people's 
