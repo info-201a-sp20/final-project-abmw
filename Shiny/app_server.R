@@ -23,9 +23,10 @@ server <- function(input, output) {
   })
 
   house_df <- read.csv(
-    "../data/World Bank household consumption.csv",stringsAsFactors = FALSE)
+    "../data/World Bank household consumption.csv", stringsAsFactors = FALSE)
   output$barchart <- renderPlotly({
     household_df <- house_df %>%
+      dplyr::rename(Area = ï..Area) %>%
       filter(Consumption.Segment == "All") %>%
       filter(Measure.Names == "US$") %>%
       filter(Area != "National") %>%
