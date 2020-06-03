@@ -10,6 +10,7 @@ library("htmltools")
 
 map_page <-
   tabPanel("Domestic Consumption",
+    includeCSS("style.css"),
     sidebarLayout(
       sidebarPanel(
         br(), br(), br(), br(), br(), br(), br(), br(), br(), br(), br(), br(),
