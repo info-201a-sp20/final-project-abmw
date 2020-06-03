@@ -71,7 +71,7 @@ line_page <-
     )
   )
 bar_page <- 
-  tabPanel("Bar Graph",
+  tabPanel("Household Consumption",
     sidebarLayout(
       sidebarPanel(
         selectInput(inputId = "country_one",

@@ -29,12 +29,13 @@ server <- function(input, output) {
              Area != "National", Country == input$country_one | input$country_two)
 
     barchart <- ggplot(household_df) +
-      geom_col(mapping = aes(x = Country, y = Measure.Values, fill = Area), 
+      geom_col(mapping = aes(x = Country, y = Measure.Values, fill = Area),
                position = "dodge")
-      
-    barchart <- ggplotly(barchart) %>%
+
+    barchart <- plot_ly(barchart) %>%
       layout(title = "Comparison of Rural and Urban Household Coffee Consumption by Country") %>%
       colorbar(title = "Area Type")
+    
     return(barchart)
   })
   
