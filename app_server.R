@@ -7,7 +7,7 @@ library("ggplot2")
 
 server <- function(input, output) {
   dom_consumption_df <- read.csv(
-    "../data/dom_consumption_df.csv", stringsAsFactors = F)
+    "data/dom_consumption_df.csv", stringsAsFactors = F)
   output$map <- renderPlotly({
     dom_consumption_df <- dom_consumption_df %>%
       filter(Market_Year == input$year)
@@ -23,10 +23,10 @@ server <- function(input, output) {
   })
 
   house_df <- read.csv(
-    "../data/World Bank household consumption.csv", stringsAsFactors = FALSE)
+    "data/World Bank household consumption.csv", stringsAsFactors = FALSE,
+    fileEncoding = "UTF-8-BOM")
   output$barchart <- renderPlotly({
     household_df <- house_df %>%
-      dplyr::rename(Area = ï..Area) %>%
       filter(Consumption.Segment == "All") %>%
       filter(Measure.Names == "US$") %>%
       filter(Area != "National") %>%
@@ -47,7 +47,7 @@ server <- function(input, output) {
   })
   
   df <- read.csv(
-    "../data/coffee_df.csv", stringsAsFactors = F)
+    "data/coffee_df.csv", stringsAsFactors = F)
   output$line <- renderPlotly({
     year_production_df <- df %>%
       select(Country_Name, Market_Year, Production) %>%
