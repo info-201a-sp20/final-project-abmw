@@ -7,6 +7,7 @@ library("rsconnect")
 library("lintr")
 library("htmltools")
 
+
 map_page <-
   tabPanel("Domestic Consumption",
     sidebarLayout(
@@ -26,6 +27,69 @@ map_page <-
       )
     )
   )
+
+
+
+bar_page <- 
+  tabPanel("Bar Graph",
+    sidebarLayout(
+      sidebarPanel(
+        selectInput(inputId = "country_one",
+                    label = "Choose first country:",
+                    choices = list(
+                      "Afghanistan","Albania", "Armenia", "Azerbaijan", "Bangladesh",
+                      "Belarus", "Benin", "Bhutan", "Bolivia", "Bosnia and Herzegovina",
+                      "Brazil", "Bulgaria", "Burkina Faso", "Burundi", "Cambodia",
+                      "Cameroon", "Cabo Verde", "Chad", "China", "Columbia",
+                      "Congo, Dem. Rep.", "Congo, Rep.", "Cote d\'Ivoire", "Djibouti",
+                      "Eqypt, Arab Rep.", "El Salvador", "Ethiopia", "Fiji", "Gabon",
+                      "Gambia, The", "Ghana", "Guatemal", "Guinea", "Honduras", "India",
+                      "Indonesia", "Iraq", "Jamaica", "Jordan", "Kazakhstan",
+                      "Kenya", "Kyrqyz Republic", "Lao PDR", "Latvia", "Lesotho",
+                      "Liberia", "Lithuania", "Macedonia, FYR", "Madagascar",
+                      "Malawi", "Maldives", "Mali", "Mauritania", "Mauritius",
+                      "Mexico", "Moldova", "Mongolia", "Montenegro", "Morocco",
+                      "Mozambique", "Namibia", "Nepal", "Nicaragua", "Niger",
+                      "Nigeria", "Pakistan", "Papua New Guinea", "Peru",
+                      "Philippines", "Romania", "Russian Federation", "Rwanda",
+                      "Sao Tome and Principe", "Senegal", "Serbia", "Sierra Leone",
+                      "South Africa", "Sri Lanka", "Swaziland", "Tajikstan", "Tanzania",
+                      "Thailand", "Timor Leste", "Togo", "Turkey", "Uganda", "Ukraine",
+                      "Vietnam", "Yemen, Rep.", "Zambia"
+                      )
+                    ),
+        selectInput(inputId = "country_two",
+                    label = "Choose second country:",
+                    choices = list(
+                      "Afghanistan","Albania", "Armenia", "Azerbaijan", "Bangladesh",
+                      "Belarus", "Benin", "Bhutan", "Bolivia", "Bosnia and Herzegovina",
+                      "Brazil", "Bulgaria", "Burkina Faso", "Burundi", "Cambodia",
+                      "Cameroon", "Cabo Verde", "Chad", "China", "Columbia",
+                      "Congo, Dem. Rep.", "Congo, Rep.", "Cote d\'Ivoire", "Djibouti",
+                      "Eqypt, Arab Rep.", "El Salvador", "Ethiopia", "Fiji", "Gabon",
+                      "Gambia, The", "Ghana", "Guatemal", "Guinea", "Honduras", "India",
+                      "Indonesia", "Iraq", "Jamaica", "Jordan", "Kazakhstan",
+                      "Kenya", "Kyrqyz Republic", "Lao PDR", "Latvia", "Lesotho",
+                      "Liberia", "Lithuania", "Macedonia, FYR", "Madagascar",
+                      "Malawi", "Maldives", "Mali", "Mauritania", "Mauritius",
+                      "Mexico", "Moldova", "Mongolia", "Montenegro", "Morocco",
+                      "Mozambique", "Namibia", "Nepal", "Nicaragua", "Niger",
+                      "Nigeria", "Pakistan", "Papua New Guinea", "Peru",
+                      "Philippines", "Romania", "Russian Federation", "Rwanda",
+                      "Sao Tome and Principe", "Senegal", "Serbia", "Sierra Leone",
+                      "South Africa", "Sri Lanka", "Swaziland", "Tajikstan", "Tanzania",
+                      "Thailand", "Timor Leste", "Togo", "Turkey", "Uganda", "Ukraine",
+                      "Vietnam", "Yemen, Rep.", "Zambia"
+                    )
+        ),
+      ),
+      mainPanel(
+        plotlyOutput(outputId = "barchart")
+        )
+    )
+)
+  
+
 
 intro_page <- tabPanel(
   title = "Introduction",
@@ -80,39 +144,13 @@ conclusion_page <- tabPanel(
   #takeaway2
   #takeaway3
 )
+
 # Define UI for the Introduction page 
 ui <- navbarPage(
   "Constants in a COVID- Driven Lifestyle",
   intro_page,
-
- map_page,
-#  tabsetPanel(
-#    tabPanel("Line Graph",
-#             sidebarLayout(
-#               sidebarPanel(selectInput
-#                            (inputId = "state", label = "Coffee Line",
-#                              choices = state_list),
-#               ),
-#               mainPanel(
-#                 plotlyOutput(outputId = "chart")
-#               )
-#             )
-#    ),
-#    
-#    tabsetPanel(
-#      tabPanel("Bar Graph",
-#               sidebarLayout(
-#                 sidebarPanel(selectInput
-#                              (inputId = "state", label = "Coffee Bar Chart",
-#                                choices = state_list),
-#                 ),
-#                 mainPanel(
-#                   plotlyOutput(outputId = "chart")
-#                 )
-#               )
-#      ),
-#    )
-#  )
-#  
+  map_page,
+  #line_page,
+  bar_page,
   conclusion_page
 )

@@ -26,15 +26,14 @@ server <- function(input, output) {
   })
   
   household_df <- read.csv(
-    "../data/World Bank household consumption.csv",stringsAsFactors = F)
-  output$barchart <- renderPlot({
-    household_df <- household_df %>%
-      filter(Consumption.Segment == "All", Measure.Names == "US$",
-             Area != "National",
-             Country %in% c(input$country_one, input$country_two))
-    
+    "../data/World Bank household consumption.csv",stringsAsFactors = FALSE)
+  output$barchart <- renderPlotly({
+    household_df <- filter(household_df, Consumption.Segment == "All", Measure.Names == "US$",
+             Area != "National", Country == input$country_one | input$country_two)
+
     barchart <- ggplot(household_df) +
-      geom_col(mapping = aes(x = Country, y = Measure.Values, fill = Area), position = "dodge")
+      geom_col(mapping = aes(x = Country, y = Measure.Values, fill = Area), 
+               position = "dodge")
       
     barchart <- ggplotly(barchart) %>%
       layout(title = "Comparison of Rural and Urban Household Coffee Consumption by Country") %>%
