@@ -101,7 +101,7 @@ bar_page <-
         selectInput(inputId = "country_two",
                     label = "Choose second country:",
                     choices = list(
-                      "Afghanistan","Albania", "Armenia", "Azerbaijan", "Bangladesh",
+                      "Albania","Afghanistan", "Armenia", "Azerbaijan", "Bangladesh",
                       "Belarus", "Benin", "Bhutan", "Bolivia", "Bosnia and Herzegovina",
                       "Brazil", "Bulgaria", "Burkina Faso", "Burundi", "Cambodia",
                       "Cameroon", "Cabo Verde", "Chad", "China", "Columbia",
@@ -124,9 +124,9 @@ bar_page <-
         ),
       ),
       mainPanel(
-        p("This chart visualizes the comparison between the counts of household consumption
-          between rural and urban areas of two countries. It uses the sum of coffee, tea, and
-          cocoa products."),
+        p("This chart visualizes the comparison of household consumption
+          between rural and urban areas of two countries in US dollars. It uses the sum of 
+          currency spent on coffee, tea, and cocoa products."),
         plotlyOutput(outputId = "barchart")
       )
     )
