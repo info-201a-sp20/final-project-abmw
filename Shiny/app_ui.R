@@ -65,7 +65,7 @@ line_page <-
         p("The total production of coffee is defined as the sum of all types
           of coffee produced including bean, ground and roast coffee. 
           The chart visualizes the production of coffee by year from every country
-          in the dataset provided by the United States Department of Agriculture"),
+          in the dataset provided by the United States Department of Agriculture."),
         plotlyOutput(outputId = "line")
       )
     )
