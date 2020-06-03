@@ -7,12 +7,7 @@ library("rsconnect")
 library("lintr")
 library("htmltools")
 
-<<<<<<< HEAD
-map_page <- tabsetPanel(
-=======
-
 map_page <-
->>>>>>> 90f7c212b1474eda7d51b24b913081c259fd3e66
   tabPanel("Domestic Consumption",
     sidebarLayout(
       sidebarPanel(
@@ -31,6 +26,49 @@ map_page <-
       )
     )
   )
+line_page <-
+  tabPanel("Country Production",
+    sidebarLayout(
+      sidebarPanel(selectInput(inputId = "Country", label = "Country",
+                  choices = c("Global",
+                    "Algeria","Angola","Argentina",
+                    "Australia","Benin","Bolivia",
+                    "Brazil","Burundi","Cameroon",
+                    "Canada","Central African Republic",
+                    "Chile","China","Colombia","Congo (Brazzaville)",
+                    "Congo (Kinshasa)","Costa Rica","Cote d'Ivoire",
+                    "Cuba", "Dominican Republic","Ecuador",
+                    "Egypt","El Salvador","Equatorial Guinea",
+                    "Ethiopia","European Union","Gabon","Ghana",
+                    "Guatemala","Guinea","Guyana",
+                    "Haiti","Honduras","India",
+                    "Indonesia","Iran","Jamaica",
+                    "Japan","Jordan","Kazakhstan",
+                    "Kenya","Korea, South","Laos",
+                    "Liberia","Madagascar","Malawi",
+                    "Malaysia","Mexico","Morocco",
+                    "New Caledonia","New Zealand","Nicaragua",
+                    "Nigeria","Norway","Panama",
+                    "Papua New Guinea","Paraguay","Peru",
+                    "Philippines","Russia","Rwanda",
+                    "Serbia","Sierra Leone",
+                    "Singapore","South Africa","Sri Lanka",
+                    "Switzerland","Taiwan","Tanzania",
+                    "Thailand","Togo","Trinidad and Tobago",
+                    "Turkey","Uganda","Ukraine",
+                    "United States","Venezuela","Vietnam",
+                    "Yemen","Yemen (Sanaa)","Zambia",
+                    "Zimbabwe"), 
+                    selected = "Global")),
+      mainPanel(
+        p("The total production of coffee is defined as the sum of all types
+          of coffee produced including bean, ground and roast coffee. 
+          The chart visualizes the production of coffee by year from every country
+          in the dataset provided by the United States Department of Agriculture"),
+        plotlyOutput(outputId = "line")
+      )
+    )
+  )
 
 intro_page <- tabPanel(
   title = "Introduction",
@@ -39,14 +77,8 @@ intro_page <- tabPanel(
   
   p(strong("Informatics 201-Section BA")),
   
-<<<<<<< HEAD
- img("The Stages of Coffee", src = "coffee.jpg"),
-  
- 
-=======
   img("The Stages of Coffee", src = "coffee.jpg"),
   
->>>>>>> 90f7c212b1474eda7d51b24b913081c259fd3e66
   h2("Overview"),
   
   p("While the world seems to be in a standstill,
@@ -70,12 +102,6 @@ intro_page <- tabPanel(
    collected the data using sample surveys to understand the area segments in which 
    coffee consumption per household was highest. They also created ranges which demonstrate 
    the household coffee consumption by rural, urban, and national areas."),
-<<<<<<< HEAD
- h2("Major Questions"),
- p("What does household consumption look like by country?"),
- p("How is the total production of coffee distributed around the world?"),
- p("What cultures and countries consume coffee and how it may affect them economically?"),
-=======
 
   h2("Major Questions"),
   p("What does household consumption look like by country?"),
@@ -102,21 +128,8 @@ ui <- navbarPage(
   "Constants in a COVID- Driven Lifestyle",
   intro_page,
 
->>>>>>> 90f7c212b1474eda7d51b24b913081c259fd3e66
  map_page,
-#  tabsetPanel(
-#    tabPanel("Line Graph",
-#             sidebarLayout(
-#               sidebarPanel(selectInput
-#                            (inputId = "state", label = "Coffee Line",
-#                              choices = state_list),
-#               ),
-#               mainPanel(
-#                 plotlyOutput(outputId = "chart")
-#               )
-#             )
-#    ),
-#    
+ line_page,  
 #    tabsetPanel(
 #      tabPanel("Bar Graph",
 #               sidebarLayout(

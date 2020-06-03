@@ -20,4 +20,30 @@ server <- function(input, output) {
       colorbar(title = "Average Consumption per Person \n(in 60kg bags)")
     return(map)
   })
+  df <- read.csv(
+    "../data/coffee_df.csv", stringsAsFactors = F)
+  output$line <- renderPlotly({
+    year_production_df <- df %>%
+      select(Country_Name, Market_Year, Production) %>%
+      spread(Country_Name, Production) %>%
+      filter(Market_Year < 2020)
+    year_production_df$Global = apply(year_production_df[,-1], 1, sum, na.rm=TRUE)
+    year_production_df <- year_production_df %>%  
+      select(Market_Year, input$Country)
+    colnames(year_production_df) <- c("Year", "Place")
+    
+    line <- plot_ly(
+      year_production_df,
+      x = ~Year,
+      y = ~Place,
+      type = "scatter",
+      mode = 'lines+markers'
+    ) %>%
+      layout(
+        title = "Total Production of Coffee by year",
+        xaxis = list(title = "Market Year"),
+        yaxis = list(title = "Coffee (1000 X 60 KG BAGS)")
+      )
+    return(line)
+  })
 }
