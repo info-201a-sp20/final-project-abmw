@@ -22,14 +22,16 @@ server <- function(input, output) {
     return(map)
   })
 
-  household_df <- read.csv(
+  house_df <- read.csv(
     "../data/World Bank household consumption.csv",stringsAsFactors = FALSE)
   output$barchart <- renderPlotly({
-    household_df <- filter(household_df, Consumption.Segment == "All", Measure.Names == "US$",
-             Area != "National", Country == input$country_one | input$country_two)
-
+    household_df <- house_df %>%
+      filter(Consumption.Segment == "All") %>%
+      filter(Measure.Names == "US$") %>%
+      filter(ï..Area != "National") %>%
+      filter(Country == input$country_one | Country == input$country_two)
     barchart <- ggplot(household_df) +
-      geom_col(mapping = aes(x = Country, y = Measure.Values, fill = Area), 
+      geom_col(mapping = aes(x = Country, y = Measure.Values, fill = ï..Area), 
                position = "dodge")
       
     barchart <- ggplotly(barchart) %>%
