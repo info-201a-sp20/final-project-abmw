@@ -1,2 +1,6 @@
-
+h2 {font-variant: small-caps;}
 body {background-color: #FFF5EE;}
+strong {font-style: italic;}
+p {font-family: "Noto Sans", sans-serif;}
+strong {border-bottom-style: solid; border-bottom-color: gray;
+  border-width: thin}

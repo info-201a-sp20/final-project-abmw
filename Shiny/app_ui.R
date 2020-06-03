@@ -7,9 +7,9 @@ library("rsconnect")
 library("lintr")
 library("htmltools")
 
-
 map_page <-
   tabPanel("Domestic Consumption",
+    includeCSS("style.css"),
     sidebarLayout(
       sidebarPanel(
         br(), br(), br(), br(), br(), br(), br(), br(), br(), br(), br(), br(),
@@ -27,9 +27,49 @@ map_page <-
       )
     )
   )
-
-
-
+line_page <-
+  tabPanel("Country Production",
+    sidebarLayout(
+      sidebarPanel(selectInput(inputId = "Country", label = "Country",
+                  choices = c("Global",
+                    "Algeria","Angola","Argentina",
+                    "Australia","Benin","Bolivia",
+                    "Brazil","Burundi","Cameroon",
+                    "Canada","Central African Republic",
+                    "Chile","China","Colombia","Congo (Brazzaville)",
+                    "Congo (Kinshasa)","Costa Rica","Cote d'Ivoire",
+                    "Cuba", "Dominican Republic","Ecuador",
+                    "Egypt","El Salvador","Equatorial Guinea",
+                    "Ethiopia","European Union","Gabon","Ghana",
+                    "Guatemala","Guinea","Guyana",
+                    "Haiti","Honduras","India",
+                    "Indonesia","Iran","Jamaica",
+                    "Japan","Jordan","Kazakhstan",
+                    "Kenya","Korea, South","Laos",
+                    "Liberia","Madagascar","Malawi",
+                    "Malaysia","Mexico","Morocco",
+                    "New Caledonia","New Zealand","Nicaragua",
+                    "Nigeria","Norway","Panama",
+                    "Papua New Guinea","Paraguay","Peru",
+                    "Philippines","Russia","Rwanda",
+                    "Serbia","Sierra Leone",
+                    "Singapore","South Africa","Sri Lanka",
+                    "Switzerland","Taiwan","Tanzania",
+                    "Thailand","Togo","Trinidad and Tobago",
+                    "Turkey","Uganda","Ukraine",
+                    "United States","Venezuela","Vietnam",
+                    "Yemen","Yemen (Sanaa)","Zambia",
+                    "Zimbabwe"), 
+                    selected = "Global")),
+      mainPanel(
+        p("The total production of coffee is defined as the sum of all types
+          of coffee produced including bean, ground and roast coffee. 
+          The chart visualizes the production of coffee by year from every country
+          in the dataset provided by the United States Department of Agriculture"),
+        plotlyOutput(outputId = "line")
+      )
+    )
+  )
 bar_page <- 
   tabPanel("Bar Graph",
     sidebarLayout(
@@ -84,36 +124,31 @@ bar_page <-
         ),
       ),
       mainPanel(
+        p("This chart visualizes the comparison between the counts of household consumption
+          between rural and urban areas of two countries. It uses the sum of coffee, tea, and
+          cocoa products."),
         plotlyOutput(outputId = "barchart")
-        )
+      )
     )
-)
-  
-
+  )
 
 intro_page <- tabPanel(
   title = "Introduction",
-
   p(strong("Authors: Andrea Argueta, Mariam Khan, Brynna Kilcline, and William Zhang")),
-  
   p(strong("Informatics 201-Section BA")),
-  
- img("The Stages of Coffee", src = "coffee.jpg"),
-
- h2("Overview"),
-  
+  img("The Stages of Coffee", src = "coffee.jpg"),
+  h2("Overview"),
   p("While the world seems to be in a standstill,
- we thought we would choose an aspect of many people's 
- lives that serves as a constant: coffee. Coffee is a 
- bridge for people to connect, so looking into it further 
- to see who/where experiences coffee in different ways is 
- very interesting to our group. Our goal is that through 
- this project we want to understand how the global consumption 
- differs across countries and over time."),
-  
+   we thought we would choose an aspect of many people's 
+   lives that serves as a constant: coffee. Coffee is a 
+   bridge for people to connect, so looking into it further 
+   to see who/where experiences coffee in different ways is 
+   very interesting to our group. Our goal is that through 
+   this project we want to understand how the global consumption 
+   differs across countries and over time."),
   p("For this final project, we decided to use the USDA and World Bank
-   databases which provides insights concering the household and worldwide 
-   consumption of coffee.The United States Department of Agriculture (USDA) 
+   databases which provide insights concerning the household and worldwide 
+   consumption of coffee. The United States Department of Agriculture (USDA) 
    collects data from agency activities which are then summarized into reports. 
    The file we are going to explore consists of data about coffee bean production, 
    export, import and consumption for every country by year. With this data, we can 
@@ -123,15 +158,14 @@ intro_page <- tabPanel(
    collected the data using sample surveys to understand the area segments in which 
    coffee consumption per household was highest. They also created ranges which demonstrate 
    the household coffee consumption by rural, urban, and national areas."),
-
  h2("Major Questions"),
  p("What does household consumption look like by country?"),
  p("How is the total production of coffee distributed around the world?"),
  p("What cultures and countries consume coffee and how it may affect them economically?"),
-
 )
+
 conclusion_page <- tabPanel(
-  "Conclusion",
+  "Takeaways",
   p("High levels of domestic coffee consumption from 1961 to 2002 are mostly
     limited to countries known for producing coffee, like Brazil, Colombia,
     Venezuela, and Ethiopia. In 2003, there is a general spread of coffee
@@ -147,10 +181,10 @@ conclusion_page <- tabPanel(
 
 # Define UI for the Introduction page 
 ui <- navbarPage(
-  "Constants in a COVID- Driven Lifestyle",
+  "Constants in a COVID-Driven Lifestyle",
   intro_page,
   map_page,
-  #line_page,
+  line_page,
   bar_page,
   conclusion_page
 )
