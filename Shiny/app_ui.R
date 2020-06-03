@@ -43,8 +43,8 @@ intro_page <- tabPanel(
    this project we want to understand how the global consumption 
    differs across countries and over time."),
   p("For this final project, we decided to use the USDA and World Bank
-   databases which provides insights concering the household and worldwide 
-   consumption of coffee.The United States Department of Agriculture (USDA) 
+   databases which provide insights concerning the household and worldwide 
+   consumption of coffee. The United States Department of Agriculture (USDA) 
    collects data from agency activities which are then summarized into reports. 
    The file we are going to explore consists of data about coffee bean production, 
    export, import and consumption for every country by year. With this data, we can 
@@ -77,10 +77,9 @@ conclusion_page <- tabPanel(
 
 # Define UI for the Introduction page 
 ui <- navbarPage(
-  "Constants in a COVID- Driven Lifestyle",
+  "Constants in a COVID-Driven Lifestyle",
   intro_page,
-
- map_page,
+  map_page,
 #  tabsetPanel(
 #    tabPanel("Line Graph",
 #             sidebarLayout(
