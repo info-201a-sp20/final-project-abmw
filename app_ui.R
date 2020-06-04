@@ -157,7 +157,9 @@ intro_page <- tabPanel(
    household consumption of coffee. This data was collected from the World Bank; they 
    collected the data using sample surveys to understand the area segments in which 
    coffee consumption per household was highest. They also created ranges which demonstrate 
-   the household coffee consumption by rural, urban, and national areas."),
+   the household coffee consumption by rural, urban, and national areas. For more information
+    about our datasets, copy this link:"),
+  p("http://datatopics.worldbank.org/consumption/product/Coffee,-Tea-and-Cocoa"),
  h2("Major Questions"),
  p("What does household consumption look like by country?"),
  p("How is the total production of coffee distributed around the world?"),
@@ -166,6 +168,8 @@ intro_page <- tabPanel(
 
 conclusion_page <- tabPanel(
   "Takeaways",
+  h2("Summary Takeaways"),
+  h3("Takeaway One"),
   p("High levels of domestic coffee consumption from 1961 to 2002 are mostly
     limited to countries known for producing coffee, like Brazil, Colombia,
     Venezuela, and Ethiopia. In 2003, there is a general spread of coffee
@@ -174,9 +178,9 @@ conclusion_page <- tabPanel(
     along with the United States, Canada, and Australia.) It's unclear whether the
     sudden change is genuine or due to an increase in availability of data, but the
     overall pattern remains clear. In the most recent years, some of these
-    countries even surpass the coffee producers in domestic consumption.")
-  #takeaway2
-  #takeaway3
+    countries even surpass the coffee producers in domestic consumption."),
+  h3("Takeaway Two"),
+  h3("Takeaway Three")
 )
 
 # Define UI for the Introduction page 
