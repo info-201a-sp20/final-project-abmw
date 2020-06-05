@@ -11,7 +11,7 @@ server <- function(input, output) {
   output$map <- renderPlotly({
     dom_consumption_df <- dom_consumption_df %>%
       filter(Market_Year == input$year)
-    
+
     map <- plot_ly(dom_consumption_df, type = "choropleth",
                    locations = dom_consumption_df$Country.Code,
                    z = dom_consumption_df$Consumption.per.Capita,
@@ -32,9 +32,9 @@ server <- function(input, output) {
       filter(Area != "National") %>%
       filter(Country == input$country_one | Country == input$country_two)
     barchart <- ggplot(household_df) +
-      geom_col(mapping = aes(x = Country, y = Measure.Values, fill = Area), 
+      geom_col(mapping = aes(x = Country, y = Measure.Values, fill = Area),
                position = "dodge")
-    
+
     barchart <- ggplotly(barchart) %>%
       layout(title = "Comparison of Rural and Urban Household Coffee
              Consumption by Country",
@@ -45,7 +45,7 @@ server <- function(input, output) {
       )
     return(barchart)
   })
-  
+
   df <- read.csv(
     "data/coffee_df.csv", stringsAsFactors = F)
   output$line <- renderPlotly({
@@ -53,17 +53,18 @@ server <- function(input, output) {
       select(Country_Name, Market_Year, Production) %>%
       spread(Country_Name, Production) %>%
       filter(Market_Year < 2020)
-    year_production_df$Global = apply(year_production_df[,-1], 1, sum, na.rm=TRUE)
-    year_production_df <- year_production_df %>%  
+    year_production_df$Global <- apply(year_production_df[, -1], 1,
+                                      sum, na.rm = TRUE)
+    year_production_df <- year_production_df %>%
       select(Market_Year, input$Country)
     colnames(year_production_df) <- c("Year", "Place")
-    
+
     line <- plot_ly(
       year_production_df,
       x = ~Year,
       y = ~Place,
       type = "scatter",
-      mode = 'lines+markers'
+      mode = "lines+markers"
     ) %>%
       layout(
         title = "Total Production of Coffee by year",
@@ -73,4 +74,3 @@ server <- function(input, output) {
     return(line)
   })
 }
-
