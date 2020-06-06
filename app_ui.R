@@ -211,6 +211,10 @@ conclusion_page <- tabPanel(
     increase in availability of data rather than a genuine leap, the overall
     pattern is clear: coffee culture is spreading.")),
   h3("Takeaway Two"),
+  p(paste0("Household 
+    consumption varies per country between area types (rural vs urban). It was very
+    interesting to see the drastic changes as we looked through and compared
+    different countries.")),
   h3("Takeaway Three")
 )
 
