@@ -147,7 +147,7 @@ intro_page <- tabPanel(
   p(strong("Authors: Andrea Argueta, Mariam Khan, Brynna Kilcline,
            and William Zhang")),
   p(strong("Informatics 201-Section BA")),
-  img("The Stages of Coffee",
+  img(strong("The Stages of Coffee"),
       src = "https://images.unsplash.com/photo-1511920170033-f8396924c348?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=634&q=80"),
   h2("Overview"),
   p("While the world seems to be in a standstill,
