@@ -198,8 +198,8 @@ get_top <- function(year) {
 
 conclusion_page <- tabPanel(
   "Takeaways",
-  h2("Summary Takeaways"),
-  h3("Takeaway One"),
+  h2("Overall Takeaways"),
+  h3("Map Takeaways"),
   p(paste0("High levels of domestic coffee consumption from 1961 to 2002
     are mostly
     limited to countries known for producing coffee. In 2002, the top-consuming
@@ -210,12 +210,18 @@ conclusion_page <- tabPanel(
     get_top(2003), ". While it's possible the sudden change is due to an
     increase in availability of data rather than a genuine leap, the overall
     pattern is clear: coffee culture is spreading.")),
-  h3("Takeaway Two"),
+  h3("Line Chart Takeaways"),
+  p("Some takeaways form the line graph are as follows; in general the global 
+    production since 1960 has grown exponentially by over 5000% to the present day. 
+    Secondly, Brazil’s coffee production has fluctuated throughout the years taking 
+    steep drops and increasing rapidly. Lastly, Angola’s coffee production was 2500 
+    bags in a calendar year reaching a peak of 4063 and then steadily dropping to 0 
+    in the late 90’s."),
+  h3("Bar Chart Takeaways"),
   p(paste0("Household 
     consumption varies per country between area types (rural vs urban). It was very
     interesting to see the drastic changes as we looked through and compared
-    different countries.")),
-  h3("Takeaway Three")
+    different countries."))
 )
 
 # Define UI for the Introduction page
