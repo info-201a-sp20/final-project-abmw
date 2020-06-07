@@ -218,10 +218,13 @@ conclusion_page <- tabPanel(
     bags in a calendar year reaching a peak of 4063 and then steadily dropping to 0 
     in the late 90’s."),
   h3("Bar Chart Takeaways"),
-  p(paste0("Household 
-    consumption varies per country between area types (rural vs urban). It was very
-    interesting to see the drastic changes as we looked through and compared
-    different countries."))
+  p(paste0("Household consumption varies per country between area types 
+    (rural vs urban). It was very interesting to see the drastic changes as we 
+    looked through and compared different countries. Some specific takeaways are
+    that the rural household consumption in Kazakhstan is very close to the
+    urban household consumption in Belarus. Also, in Brazil, the urban household
+    consumption accounts for the majority of consumption compared to rural, meaning
+    there is more consumption in the cities of Brazil."))
 )
 
 # Define UI for the Introduction page
