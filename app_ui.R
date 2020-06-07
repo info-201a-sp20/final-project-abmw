@@ -212,21 +212,22 @@ conclusion_page <- tabPanel(
     increase in availability of data rather than a genuine leap, the overall
     pattern is clear: coffee culture is spreading.")),
   h3("Line Chart Takeaways"),
-  p("Some takeaways form the line graph are as follows; in general the global 
-    production since 1960 has grown significantly by over 5000% to the present day. 
-    Secondly, Brazil's coffee production has fluctuated throughout the years taking 
-    steep drops and increasing rapidly. Brazil is the leading producer of coffee of
-    the countries in the dataset. Lastly, It is obeserved that countries in the higher
-    and lower latitudes like Canada, Norway and Argentina have no production in coffee.
-    This is indicative of the climate restrictions necessary for optimally growing coffee."),
+  p("Some takeaways from the line graph are as follows: in general the global
+    production since 1960 has grown significantly by over 5000% to the present
+    day. Secondly, Brazil's coffee production has fluctuated throughout the
+    years taking steep drops and increasing rapidly. Brazil is the leading
+    producer of coffee of the countries in the dataset. Lastly, it is
+    observed that countries in the higher and lower latitudes like Canada,
+    Norway and Argentina have no production in coffee. This is indicative
+    of the climate restrictions necessary for optimally growing coffee."),
   h3("Bar Chart Takeaways"),
-  p(paste0("Household consumption varies per country between area types 
-    (rural vs urban). It was very interesting to see the drastic changes as we 
+  p(paste0("Household consumption varies per country between area types
+    (rural vs urban). It was very interesting to see the drastic changes as we
     looked through and compared different countries. Some specific takeaways are
     that the rural household consumption in Kazakhstan is very close to the
     urban household consumption in Belarus. Also, in Brazil, the urban household
-    consumption accounts for the majority of consumption compared to rural, meaning
-    there is more consumption in the cities of Brazil."))
+    consumption accounts for the majority of consumption compared to rural,
+    meaning there is more consumption in the cities of Brazil."))
 )
 
 # Define UI for the Introduction page
