@@ -147,7 +147,8 @@ intro_page <- tabPanel(
   p(strong("Authors: Andrea Argueta, Mariam Khan, Brynna Kilcline,
            and William Zhang")),
   p(strong("Informatics 201-Section BA")),
-  img(strong("The Stages of Coffee"),
+  p(strong("The Stages of Coffee")),
+  img(strong(""),
       src = "https://images.unsplash.com/photo-1511920170033-f8396924c348?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=634&q=80"),
   h2("Overview"),
   p("While the world seems to be in a standstill,
@@ -212,11 +213,12 @@ conclusion_page <- tabPanel(
     pattern is clear: coffee culture is spreading.")),
   h3("Line Chart Takeaways"),
   p("Some takeaways form the line graph are as follows; in general the global 
-    production since 1960 has grown exponentially by over 5000% to the present day. 
-    Secondly, Brazil’s coffee production has fluctuated throughout the years taking 
-    steep drops and increasing rapidly. Lastly, Angola’s coffee production was 2500 
-    bags in a calendar year reaching a peak of 4063 and then steadily dropping to 0 
-    in the late 90’s."),
+    production since 1960 has grown significantly by over 5000% to the present day. 
+    Secondly, Brazil's coffee production has fluctuated throughout the years taking 
+    steep drops and increasing rapidly. Brazil is the leading producer of coffee of
+    the countries in the dataset. Lastly, It is obeserved that countries in the higher
+    and lower latitudes like Canada, Norway and Argentina have no production in coffee.
+    This is indicative of the climate restrictions necessary for optimally growing coffee."),
   h3("Bar Chart Takeaways"),
   p(paste0("Household consumption varies per country between area types 
     (rural vs urban). It was very interesting to see the drastic changes as we 
